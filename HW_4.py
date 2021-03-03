@@ -135,7 +135,7 @@ class City:
         if population > 1500:
             return instance
         else:
-            print("Your city is too small")
+            return "Your city is too small"
 
     def __str__(self):
         return f'The population of {self.name} is {self.population}.'
@@ -162,13 +162,9 @@ class Addition:
         if self.value > 10 or other.value > 10:
             return self.value * other.value
         return self.value + other.value
+    
 
-
-addition_1 = Addition(99)
-addition_2 = Addition(7)
-sum = addition_1 + addition_2
-
-print(f'The result is', sum)
+print('The result is', Addition(99)+Addition(7))
 
 
 
