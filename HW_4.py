@@ -85,12 +85,16 @@ class SchoolBus(School, Bus):
         self.bus_school_color = bus_school_color
 
 
+    def get_bus_school_color(self):
+      return self.bus_school_color
+
+
 school_bus = SchoolBus()
 
 
 print(f'The school bus: max speed - {school_bus.max_speed}, mileage - {school_bus.mileage}, '
       f'seating capacity - {school_bus.seating_capacity}, id -', school_bus.get_school_id(),
-      f'number of students - {school_bus.number_of_students}, color - {school_bus.bus_school_color}')
+      f'number of students - {school_bus.number_of_students}, color -', school_bus.get_bus_school_color())
 
 
 
