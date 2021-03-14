@@ -43,10 +43,13 @@ class GuitarString:
     """
     def __init__(self, string_length):
         self.string_length = string_length
+        
+    def __str__(self):
+      return f'{self.string_length}'
 
 
 string = GuitarString(4)
-guitar = Guitar("Lennon", string.string_length)
+guitar = Guitar("Lennon", string)
 
 print(f'{guitar.name}, {guitar.string}')
 
@@ -124,7 +127,7 @@ class Concert:
     max_visitors_num = 22
 
     def __init__(self, visitors_count=0):
-        self._visitors_count = visitors_count
+        self.visitors_count = visitors_count
 
     @property
     def visitors_count(self):
@@ -138,7 +141,7 @@ class Concert:
             self._visitors_count = self.max_visitors_num
 
 
-Concert.max_visitor_num = 50
+Concert.max_visitors_num = 50
 concert = Concert(50)
 concert.visitors_count = 1000
 print(concert.visitors_count)
@@ -200,8 +203,8 @@ class AddressBook:
         self.age = age
 
     def __str__(self):
-        return f'{AddressBook}, {self.key}, {self.name}, {self.phone_number}, {self.address}, ' \
-               f'{self.email}, {self.birthday}, {self.age}'
+        return f"{__class__.__name__}(key={self.key}, name={self.name}, phone_number={self.phone_number}, " \
+               f"address={self.address}, email={self.email}, birthday={self.birthday}, age={self.age})"
 
 
 contact_2 = AddressBook(key=1, name='Pedro', phone_number='1717171', address='Tokyo',
@@ -222,7 +225,6 @@ class Person:
 person_1 = Person()
 
 setattr(person_1, 'age', '77')
-# print(getattr(person_1, 'name', 'age'))
 
 print(f'{person_1.name} is {person_1.age}.')
 
@@ -243,7 +245,9 @@ class Student:
 
 student_1 = Student(1, "Kiki")
 setattr(student_1, "email", "student@gmail.com")
+student_email = student_1.email
 print(getattr(student_1, "email"))
+print(student_email)
 
 
 #11*.
